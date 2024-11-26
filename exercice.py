@@ -38,7 +38,7 @@ class todo_list:
                 if task['status'] == 'À faire':
                     task['status'] = 'Fait'
                 elif task['status'] == 'Fait':
-                    task['status'] = 'À fair'
+                    task['status'] = 'À faire'
                 print(f"Le statut de la tâche '{task_name}' a été mis à jour : {task['status']}")
                 return
         print(f"Tâche non trouvée : {task_name}")

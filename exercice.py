@@ -16,8 +16,12 @@ class todo_list:
     def remove_task(self, task_name):
         for task in self.task:
             if task['name'] == task_name:
-                self.task.remove(task)
-                print("La tâche", task , "a été retirée avec succès !")
+                confirmer = input(f"Confirmez le fait de vouloir supprimer '{task_name}'(oui/non):")
+                if confirmer == 'oui' :
+                    self.task.remove(task)
+                    print("La tâche", task , "a été retirée avec succès !")
+                else:
+                    print(f"La tâche {task_name} n'a pas été supprimée.")
                 return
         else:
             print("Aucune tâche trouvée !")

@@ -31,6 +31,13 @@ class todo_list:
         else:
             print("Le liste est vide ou inexistante !")
             return
+    #Ajout de la fonctionnalité "Status"
+    def status_modifier(self, task_name):
+        for task in self.task:
+            if task['status'] == 'À faire' :
+                task['status'] == 'Fait'
+            elif task['status'] == 'Fait':
+                task['status'] == 'À faire'
 
 
 liste_de_taches = todo_list("Notes pour le goûter")
@@ -42,3 +49,4 @@ liste_de_taches.open_list()
 liste_de_taches.add_task("Faire des cookies")
 liste_de_taches.add_task("Faire des brownies")
 liste_de_taches.open_list()
+liste_de_taches.status_modifier("Faire des cookies")

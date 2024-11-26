@@ -34,10 +34,14 @@ class todo_list:
     #Ajout de la fonctionnalité "Status"
     def status_modifier(self, task_name):
         for task in self.task:
-            if task['status'] == 'À faire' :
-                task['status'] == 'Fait'
-            elif task['status'] == 'Fait':
-                task['status'] == 'À faire'
+            if task['name'] == task_name:
+                if task['status'] == 'À faire':
+                    task['status'] = 'Fait'
+                elif task['status'] == 'Fait':
+                    task['status'] = 'À fair'
+                print(f"Le statut de la tâche '{task_name}' a été mis à jour : {task['status']}")
+                return
+        print(f"Tâche non trouvée : {task_name}")
 
 
 liste_de_taches = todo_list("Notes pour le goûter")
@@ -50,3 +54,4 @@ liste_de_taches.add_task("Faire des cookies")
 liste_de_taches.add_task("Faire des brownies")
 liste_de_taches.open_list()
 liste_de_taches.status_modifier("Faire des cookies")
+liste_de_taches.open_list()
